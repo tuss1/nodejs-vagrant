@@ -1,0 +1,4 @@
+/.vagrant
+/vhost.conf
+/node_modules
+/package.json
