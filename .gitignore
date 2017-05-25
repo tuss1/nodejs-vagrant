@@ -2,3 +2,5 @@
 /vhost.conf
 /node_modules
 /package.json
+/npm-debug.log
+/project

@@ -1,1 +1,18 @@
-# TODO: config here...
+vb:
+  memory: 1024
+  cpus: 1
+  name: node-project
+config:
+  vm:
+    box: ubuntu/trusty64
+    hostname: node-project
+    ip: 192.168.33.10
+  hostmanager:
+    aliases: [node-project]
+vagrantsh:
+  packages: [git curl nginx]
+  npm:
+    save: [lodash jquery]
+    savedev: [webpack]
+  swapsize: 2048
+  timezone: Asia/Yekaterinburg

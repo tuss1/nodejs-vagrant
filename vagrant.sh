@@ -26,19 +26,20 @@ sudo update-locale LC_ALL="C"
 sudo dpkg-reconfigure locales
 
 sudo apt-get update
-sudo apt-get upgrade -y
+#sudo apt-get upgrade -y
 sudo apt-get install -y ${packages}
 
 # install nodejs
 curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash - && sudo apt-get install -y nodejs
 
 #inits npm
-cd /var/www
+mkdir /var/www/project
+cd /var/www/project
 npm -y init
 
 # install npm packages
-# npm install --save ${npmsave}
-# npm install --save-dev ${npmsavedev}
+npm install --save --no-bin-links ${npmsave}
+npm install --save-dev --no-bin-links ${npmsavedev}
 
 # create nginx config
 if [ ! -f /etc/nginx/sites-enabled/${domain} ]; then
@@ -47,5 +48,4 @@ if [ ! -f /etc/nginx/sites-enabled/${domain} ]; then
 fi
 
 # Configuring application
-
 sudo service nginx restart

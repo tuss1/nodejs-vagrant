@@ -8,6 +8,6 @@ server {
     }
 
     location ^~ /static/ {
-        root /var/www;
+        root /var/www/project;
     }
 }
